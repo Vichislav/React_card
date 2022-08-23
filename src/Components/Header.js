@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Container, FormControl, Nav, Navbar, Form} from "react-bootstrap";
+import { Container, Nav, Navbar} from "react-bootstrap";
 import logo from './logo192.png'
-import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "../Pages/Home"
 import About from "../Pages/About"
 import Contacts from "../Pages/Contacts";
@@ -17,7 +17,7 @@ export default class Header extends Component {
                             <img
                                 src={logo}
                                 height="30"
-                                width={30}
+                                width="30"
                                 className="d-inline-block align-top"
                                 alt="Logo"
                             />
