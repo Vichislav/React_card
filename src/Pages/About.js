@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Col, Container, Nav, Row, TabContainer, TabContent, TabPane} from "react-bootstrap";
+import about1 from "../Assets/about1.jpg"
 
 class About extends Component {
     render() {
@@ -26,12 +27,22 @@ class About extends Component {
                        <Col sm={9}>
                            <TabContent>
                                <TabPane eventKey="education">
-                                   <img
-                                       src="https://sibadi.org/bitrix/templates/sibadi_front-new/images/sibadi.png"
-                                       alt="sibadi"
-                                   />
-                                   <p>Сегодня СибАДИ – это инновационно-ориентированный, отраслевой вуз в сфере
-                                       транспорта и строительства.</p>
+                                   <Row>
+                                       <Col xs={12} md={8}>
+                                           <h4>ФГБОУ ВО "СибАДИ"</h4>
+                                           <p> 2007-2012 г. Нефтегазовая и строительная техника, Подъемно-транспортные,
+                                               строительные, дорожные машины и оборудование</p>
+                                           <p> 2014-2018 г. Институт магистратуры и аспирантуры, 05.05.04 – Дорожные, строительные и подъемно-транспортные машины</p>
+                                       </Col>
+                                       <Col xs={6} md={4}>
+                                           <img
+                                               src={about1}
+                                               height="200"
+                                               width="200"
+                                               alt="Sibadi"
+                                           />
+                                       </Col>
+                                   </Row>
                                </TabPane>
                                <TabPane eventKey="work">
                                    <img

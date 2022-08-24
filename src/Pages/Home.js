@@ -10,21 +10,21 @@ class Home extends Component {
         return (
             <div>
                 <CarouselBox />
-                <Container className="m-5">
-                    <CardGroup >
-                        <Card style={{ width: '18rem' }} className="p-1">
+                <Container className="m-auto">
+                    <h3 className="m-3 text-center" >Мои сильные стороны</h3>
+                    <CardGroup className="m-3">
+                        <Card style={{ width: '18rem' }} className="p-1 bg-light">
                             <Card.Img variant="top"
                                       src={card_1}
                                       height="220"
                                       width="260"
                             />
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>Упорство</Card.Title>
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Написание диссертации требует наличия определенного уровня упорства.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Подробнее</Button>
                             </Card.Body>
                         </Card>
                         <Card style={{ width: '18rem' }} className="p-1">
@@ -42,7 +42,7 @@ class Home extends Component {
                                 <Button variant="primary">Go somewhere</Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }} className="p-1">
+                        <Card style={{ width: '18rem' }} className="p-1 bg-light">
                             <Card.Img variant="top"
                                       src={card_3}
                                       height="220"
