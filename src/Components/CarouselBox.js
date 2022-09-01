@@ -3,55 +3,69 @@ import {Carousel, Container} from "react-bootstrap";
 import photo1 from '../Assets/photo1.jpg'
 import photo2 from '../Assets/photo2.jpg'
 import photo3 from '../Assets/photo3.jpg'
+import photo4 from '../Assets/photo4.jpg'
+import '../css/home.css'
 
 class CarouselBox extends Component {
     render() {
         return (
-            <Container className="w-50 m-auto">
-                <Carousel variant="dark" >
-                    <Carousel.Item >
-                        <img
-                            className="d-block w-100"
-                            src={photo1}
-                            height="600"
-                            width="800"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
+            <div className="carWrap">
+                <div className="carWrapImg">
+                    <img className="carWrapImgPhoto"
+                        src={photo4}
+                        alt="First slide"
+                    />
+                </div>
+                <div className="carWrapCar">
+                    <Container className="w-50 m-auto"
+                               aria-valuemax={"100%"}
+                               height="auto">
+                        <Carousel variant="dark" >
+                            <Carousel.Item >
+                                <img
+                                    className="d-block w-100"
+                                    src={photo1}
+                                    aria-valuemax={"100%"}
+                                    height="auto"
+                                    alt="First slide"
+                                />
+                                <Carousel.Caption>
 
-                            <h3>Вы можете изучить работу сайта</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={photo2}
-                            height="600"
-                            width="800"
-                            alt="Second slide"
-                        />
-                        <Carousel.Caption>
+                                    <p className="carWrapCarSlideText">2 года я был инженером</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src={photo2}
+                                    aria-valuemax={"100%"}
+                                    height="auto"
+                                    alt="Second slide"
+                                />
+                                <Carousel.Caption>
 
-                            <h3>Можно ознакомиться с информацией обо мне</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            height="600"
-                            width="800"
-                            src={photo3}
-                            alt="Third slide"
-                        />
-                        <Carousel.Caption>
+                                    <p className="carWrapCarSlideText">6 лет я был преподавателем</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    aria-valuemax={"100%"}
+                                    height="auto"
+                                    src={photo3}
+                                    alt="Third slide"
+                                />
+                                <Carousel.Caption>
 
-                            <h3>
-                                Можно связаться со мной
-                            </h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </Container>
+                                    <p className="carWrapCarSlideText">
+                                        Теперь я мечтаю стать программистом
+                                    </p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
+                    </Container>
+                </div>
+            </div>
         );
     }
 }

@@ -1,0 +1,83 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: grey;
+}
+.wrapContainer { /*контейнер для карусели и для текста*/
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.wrapImg {
+    max-width:100%;
+    height:auto;
+}
+.wrapContainerCarousel {
+    height: auto;
+    min-width: 450px;
+    width: 40%;
+    margin-top: 5%;
+}
+.wrapContainerContent { /*контейнер для текста слева*/
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40%; /*!!!*/
+    width: 50%;
+}
+.wrapContainerContentTitle {
+    text-align: center;
+    margin-top: 5%;
+    min-width: 400px;
+    width: 50%;
+    font-size: 3vm;
+    color: white;
+}
+.wrapContainerContentText {
+    text-align: center;
+    min-width: 400px;
+    width: 50%;
+    font-size: 2vm;
+    color: white;
+}
+/*carousel.css*/
+.carWrap { /*общий контейнер*/
+    height: 352px; /*!!!*/
+    width: 450px;
+    position: relative;
+    z-index: 4;
+}
+
+.carWrapImg { /*контейнер для картинки, она поверх*/
+
+    top: -3%;
+    right: 26%;
+    position: absolute;
+    z-index: 6;
+}
+.carWrapCar { /*контейнер для карусели, она внизу*/
+    position: relative;
+    z-index: 1;
+}
+
+.carWrapImgPhoto { /*сама картинка головы*/
+    height: auto;
+    width: 70%;
+
+}
+.carWrapCarSlideText {
+    font-size: 2vm;
+    color: white;
+}
+.wrapBelt {
+    background-color: darkgrey;
+    border: solid 1px white ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Nav, Navbar} from "react-bootstrap";
-import logo from './logo192.png'
+import logo from '../Assets/logo192.png'
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "../Pages/Home"
 import About from "../Pages/About"
@@ -11,7 +11,7 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="light" variant="light">
+                <Navbar bg="dark" variant="dark">
                     <Container>
                         <Navbar.Brand href="/">
                             <img
