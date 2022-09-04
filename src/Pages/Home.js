@@ -18,7 +18,8 @@ class Home extends Component {
                             Привет! Меня зовут Вячеслав и я изучаю JavaScript.
                         </h2>
                         <p className="wrapContainerContentText">
-                            Этот сайт я сделал, как удобный вариант демонстрации своего уровня познания JavaScript, и неплохую возможность рассказать о себе.
+                            Этот сайт я сделал, как удобный вариант демонстрации своего уровня познания JavaScript,
+                            и неплохую возможность рассказать о себе.
                         </p>
                     </div>
                     <div className="wrapContainerCarousel">
@@ -33,48 +34,53 @@ class Home extends Component {
                 <Container className="m-auto">
                     <h3 className="wrapContainerContentTitle m-3 text-center" >Мои учебные проекты</h3>
                     <CardGroup className="m-3">
-                        <Card  style={{ width: '18rem' }} className="p-1 bg-light">
+                        <Card  style={{ width: '18rem' }} className="p-1 bg-dark">
                             <Card.Img variant="top"
                                       src={card_1}
-                                      height="220"
-                                      width="260"
+                                      style={{display: "block"}}
                             />
                             <Card.Body>
-                                <Card.Title>Todo App</Card.Title>
-                                <Card.Text>
-                                    Приложение написанно с применением Angular и NgRx
+                                <Card.Title style={{color: "white"}}>Unit test (Angular app)</Card.Title>
+                                <Card.Text style={{color: "white"}}>
+                                    Тестирование Angular приложения с применением Karma и Jasmine
                                 </Card.Text>
-                                <Button variant="primary">Подробнее</Button>
+                                    <Button variant="primary"
+                                            onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
+                                    >Подробнее
+                                    </Button>
                             </Card.Body>
                         </Card>
                         <Card style={{ width: '18rem' }} className="p-1">
                             <Card.Img variant="top"
                                       src={card_2}
-                                      height="220"
-                                      width="260"
+                                      style={{display: "block"}}
                             />
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>Адаптивная верстка</Card.Title>
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Пример выполнения задания по адаптивной верстки сайта.
+                                    Плюс slick слайдер типа single item, написанный без jQery и css.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav/html_purrweb")}
+                                >Подробнее
+                                </Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }} className="p-1 bg-light">
+                        <Card style={{ width: '18rem' }} className="p-1 bg-dark">
                             <Card.Img variant="top"
                                       src={card_3}
-                                      height="220"
-                                      width="260"
+                                      style={{display: "block"}}
                             />
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                <Card.Title style={{color: "white"}}>Работа с JSON</Card.Title>
+                                <Card.Text style={{color: "white"}}>
+                                    Пример выполнения задания по работе с данными, получаемыми из файла JSON
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav/work-with-JSON")}
+                                >Подробнее
+                                </Button>
                             </Card.Body>
                         </Card>
                     </CardGroup>
