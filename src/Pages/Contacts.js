@@ -95,36 +95,40 @@ const Contacts =() => {
                             </Button>
                         </Form>
                     </Container>
-                    <Card>
+                    <Card className="wrapContactCard">
                         <Card.Body> Form & Validation from React-bootstrap</Card.Body>
                     </Card>
                 </div>
+                <div className="wrapContactContainer">
+                    <Container style={{ width: '500px' }} >
+                        <h1 className="text-center"> Contact me</h1>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                {/*если emailDirty или emailError true выводим div*/}
+                                {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
+                                <Form.Control onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name="email" type="text" placeholder="Enter email" />
 
-                <Container style={{ width: '500px' }} className="mt-5">
-                    <h1 className="text-center"> Contact me</h1>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            {/*если emailDirty или emailError true выводим div*/}
-                            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                            <Form.Control onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name="email" type="text" placeholder="Enter email" />
+                                <Form.Text className="text-muted">
+                                    We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                {/*если passwordDirty или passwordError true выводим div*/}
+                                {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
+                                <Form.Control onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} name="password" type="password"  placeholder="Enter yor password" />
 
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            {/*если passwordDirty или passwordError true выводим div*/}
-                            {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
-                            <Form.Control onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} name="password" type="password"  placeholder="Enter yor password" />
-
-                        </Form.Group>
-                        <Button disabled={!formValid} variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
-                </Container>
+                            </Form.Group>
+                            <Button disabled={!formValid} variant="primary" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                    </Container>
+                    <Card className="wrapContactCard">
+                        <Card.Body> Form from React-bootstrap & custom Validation</Card.Body>
+                    </Card>
+                </div>
             </div>
         );
 

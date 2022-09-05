@@ -46,7 +46,7 @@ class Home extends Component {
                                 </Card.Text>
                                     <Button variant="primary"
                                             onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
-                                    >Подробнее
+                                    >Подробнее  на git
                                     </Button>
                             </Card.Body>
                         </Card>
@@ -63,7 +63,7 @@ class Home extends Component {
                                 </Card.Text>
                                 <Button variant="primary"
                                         onClick={() => window.open("https://github.com/Vichislav/html_purrweb")}
-                                >Подробнее
+                                >Подробнее на git
                                 </Button>
                             </Card.Body>
                         </Card>
@@ -79,7 +79,7 @@ class Home extends Component {
                                 </Card.Text>
                                 <Button variant="primary"
                                         onClick={() => window.open("https://github.com/Vichislav/work-with-JSON")}
-                                >Подробнее
+                                >Подробнее на git
                                 </Button>
                             </Card.Body>
                         </Card>

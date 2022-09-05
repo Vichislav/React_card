@@ -10,7 +10,7 @@ import Blog from "../Pages/Blog";
 export default class Header extends Component {
     render() {
         return (
-            <div>
+            <Container>
                 <Navbar bg="dark" variant="dark">
                     <Container>
                         <Navbar.Brand href="/">
@@ -24,8 +24,8 @@ export default class Header extends Component {
                         </Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="/" > Home </Nav.Link>
-                            <Nav.Link href="/about" > About us </Nav.Link>
-                            <Nav.Link href="/contacts" > Contacts </Nav.Link>
+                            <Nav.Link href="/about" > About me </Nav.Link>
+                            <Nav.Link href="/contacts" > Forms </Nav.Link>
                             <Nav.Link href="/blog" > Blog </Nav.Link>
                         </Nav>
                     </Container>
@@ -38,37 +38,7 @@ export default class Header extends Component {
                         <Route path='/blog' element={<Blog/>}/>
                     </Routes>
                 </Router>
-            </div>
-            /*<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="/">
-                        <img
-                            src={logo}
-                            height="30"
-                            width={30}
-                            className="d-inline-block align-top"
-                            alt="Logo"
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link href="/" > Home </Nav.Link>
-                            <Nav.Link href="/about" > About us </Nav.Link>
-                            <Nav.Link href="/contacts" > Contacts </Nav.Link>
-                            <Nav.Link href="/blog" > Blog </Nav.Link>
-                        </Nav>
-                        <Form >
-                            <FormControl
-                                type="text"
-                                placeholder="Search"
-                                className="mr-sm-2"
-                            />
-                            <Button variant="outline-info"> Search </Button>
-                        </Form>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>*/
+            </Container>
         );
     }
 }
