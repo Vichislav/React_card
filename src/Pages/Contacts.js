@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Card, Container, Form} from "react-bootstrap";
-import card_1 from "../Assets/Card_1.jpg";
 import '../css/home.css'
 
 const Contacts =() => {
