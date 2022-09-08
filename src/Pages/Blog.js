@@ -17,13 +17,22 @@ const Blog = () => {
     const customers = useSelector(state => state.customerReducer.customers)
     /**состояние input для ввода зарплаты**/
     const [cashInput, setCashInput] = useState('');
+    /**состояние для радиокнопок выбора волют**/
+    const [currency, setCurrency] = useState('Руб');
+    /**состояние для расчета зарплаты**/
+    const [salary, setSalary] = useState();
 
+    /*устанавливаем значение состояния инпута*/
     const handleCashInput = (event) => {
         setCashInput(event.target.value)
     }
+    /*устанавливаем значение зарплаты*/
+    const handleSalary = () => {
+        setSalary(cash)
+    }
 
     const addCash = (cash) => {
-        /*прокидываем эекшн*/
+        /*прокидываем экшн*/
         dispatch({type: "ADD_CASH", payload: cash})
         /*устанавливаем 0 значение состояния инпута*/
         setCashInput('')
@@ -60,6 +69,8 @@ const Blog = () => {
                                         name="group1"
                                         type={type}
                                         id={`inline-${type}-1`}
+                                        value={'Руб'}
+                                        onChange={ event => setCurrency(event.target.value)}
                                     />
                                     <Form.Check
                                         inline
@@ -67,6 +78,8 @@ const Blog = () => {
                                         name="group1"
                                         type={type}
                                         id={`inline-${type}-2`}
+                                        value={'$'}
+                                        onChange={ event => setCurrency(event.target.value)}
                                     />
                                     <Form.Check
                                         inline
@@ -74,6 +87,8 @@ const Blog = () => {
                                         name="group1"
                                         type={type}
                                         id={`inline-${type}-3`}
+                                        value={'Euro'}
+                                        onChange={ event => setCurrency(event.target.value)}
                                     />
                                 </div>
                             ))}
@@ -83,7 +98,7 @@ const Blog = () => {
                                 <div className="wrapMoneyControl">
                                     <div className="wrapMoneyControlInput">
                                         <InputGroup className="mb-3">
-                                            <InputGroup.Text>$</InputGroup.Text>
+                                            <InputGroup.Text>{currency}</InputGroup.Text>
                                             <Form.Control
                                                 aria-label="Amount (to the nearest dollar)"
                                                 placeholder="enter a number"
