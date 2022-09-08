@@ -15,9 +15,21 @@ const Blog = () => {
     const dispatch = useDispatch()
     const cash = useSelector(state => state.cashReducer.cash)
     const customers = useSelector(state => state.customerReducer.customers)
+    /**состояние input для ввода зарплаты**/
+    const [cashInput, setCashInput] = useState('');
+
+    const handleCashInput = (event) => {
+        setCashInput(event.target.value)
+    }
 
     const addCash = (cash) => {
+        /*прокидываем эекшн*/
         dispatch({type: "ADD_CASH", payload: cash})
+        /*устанавливаем 0 значение состояния инпута*/
+        setCashInput('')
+        /*обнуляем отображение в инпуте на странице*/
+        document.getElementById('cashInput').value = ''
+
     }
 
     const getCash = (cash) => {
@@ -75,12 +87,13 @@ const Blog = () => {
                                             <Form.Control
                                                 aria-label="Amount (to the nearest dollar)"
                                                 placeholder="enter a number"
-                                                id="moneyInput"
+                                                id="cashInput"
+                                                onChange={handleCashInput}
                                             />
                                         </InputGroup>
                                     </div>
                                     <div className="wrapMoneyControlButton">
-                                        <Button variant="primary" onClick={() => addCash(Number(prompt()))}>+</Button>
+                                        <Button variant="primary" onClick={() => addCash(Number(cashInput))}>+</Button>
                                         <Button variant="primary" onClick={() => getCash(Number(prompt()))}>-</Button>
                                     </div>
                                 </div>
