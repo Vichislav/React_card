@@ -105,3 +105,44 @@
     max-width: 280px;
     background-color: wheat;
 }
+/************Money Section*************************/
+.wrapMoney {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.wrapMoneyForm { /*формма с инпутами и кнопками*/
+    width: 300px;
+}
+
+
+.wrapMoneyControlButton { /*контейнер для кнопок*/
+    max-width: 60%;
+    display: flex;
+}
+.squareButton { /*кнопки + и - */
+    margin-left: 4%;
+    width: 20%;
+}
+.clearButton { /*кнопки + и - */
+    margin-left: 4%;
+}
+
+.wrapMoneyReaction { /*контейнер с картинкой реакции*/
+    position: relative;
+    margin-left: 3%;
+    width: 150px;
+}
+.wrapMoneyReactionImg { /*картинка реакции*/
+    position: absolute;
+    display: block;
+    width: 150px;
+}
+.reactionImgTop {
+    visibility: visible;
+
+}
+.reactionImgBot {
+    visibility: hidden;
+}

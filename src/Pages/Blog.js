@@ -5,12 +5,13 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import '../css/home.css'
 import {useDispatch, useSelector} from "react-redux";
 import {addCustomerAction, removeCustomerAction} from "../store/customerReducer";
-
-
+import cash_0 from "../Assets/cash_0.jpg"
+import cash_1 from "../Assets/cash_1.jpg"
+import cash_2 from "../Assets/cash_2.jpg"
+import cash_3 from "../Assets/cash_3.jpg"
 
 
 const Blog = () => {
-
 
     const dispatch = useDispatch()
     const cash = useSelector(state => state.cashReducer.cash)
@@ -31,18 +32,59 @@ const Blog = () => {
         setSalary(cash)
     }
 
-    const addCash = (cash) => {
-        /*прокидываем экшн*/
-        dispatch({type: "ADD_CASH", payload: cash})
-        /*устанавливаем 0 значение состояния инпута*/
-        setCashInput('')
-        /*обнуляем отображение в инпуте на странице*/
-        document.getElementById('cashInput').value = ''
+    const reactionImages = document.querySelectorAll('.wrapMoneyReactionImg') /*получили картинки*/
 
+    const makeInvisible = () => {
+        reactionImages.forEach(function (element) {
+            element.classList.remove('reactionImgTop')
+            element.classList.remove('reactionImgBot')
+            element.classList.add('reactionImgBot')
+        })
+    }
+
+    const makeVisible = (cash) => {
+        console.log(cash)
+       // makeInvisible()
+        if ( 20000 > cash > 0) {
+            document.querySelector('.card0').classList.add('reactionImgTop')
+        }
+        if ( 30000 > cash > 20000) {
+            document.querySelector('.card1').classList.add('reactionImgTop')
+        }
+        if ( 40000 > cash > 30000) {
+            document.querySelector('.card2').classList.add('reactionImgTop')
+        }
+        if ( 50000 > cash > 40000) {
+            document.querySelector('.card3').classList.add('reactionImgTop')
+        }
+        else {
+            document.querySelector('.card0').classList.add('reactionImgTop')
+        }
+    }
+
+    const clearInputCash = () => {
+        setCashInput('') /*устанавливаем 0 значение состояния инпута*/
+        document.getElementById('cashInput').value = ''  /*обнуляем отображение в инпуте на странице*/
+    }
+
+    const subCash = (cash) => {
+        dispatch({type: "SUBMIT_CASH", payload: cash}) /*прокидываем экшн*/
+        makeVisible(cash)
+        clearInputCash()
+
+    }
+    const addCash = (cash) => {
+        dispatch({type: "ADD_CASH", payload: cash}) /*прокидываем экшн*/
+        clearInputCash()
     }
 
     const getCash = (cash) => {
         dispatch({type: "GET_CASH", payload: cash})
+        clearInputCash()
+    }
+    const clearCash = (cash) => {
+        dispatch({type: "CLEAR_CASH", payload: cash})
+        clearInputCash()
     }
 
     const addCustomer = (name) => {
@@ -94,7 +136,8 @@ const Blog = () => {
                             ))}
                         </Form>
                         <div className="wrapMoney">
-                            <div>
+                            <div className={'wrapMoneyForm'}>
+                                <p>Введите своё предложение</p>
                                 <div className="wrapMoneyControl">
                                     <div className="wrapMoneyControlInput">
                                         <InputGroup className="mb-3">
@@ -108,13 +151,21 @@ const Blog = () => {
                                         </InputGroup>
                                     </div>
                                     <div className="wrapMoneyControlButton">
-                                        <Button variant="primary" onClick={() => addCash(Number(cashInput))}>+</Button>
-                                        <Button variant="primary" onClick={() => getCash(Number(prompt()))}>-</Button>
+                                        <Button variant="primary" onClick={() => subCash(Number(cashInput))}>Submit</Button>
+                                        <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
+                                        <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
+                                        <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>
                                     </div>
                                 </div>
                                 <div className="wrapMoneyState">
-                                    <p>{cash}</p>
+                                    <p>Ваше предложение составляет {cash} {currency} </p>
                                 </div>
+                            </div>
+                            <div className={'wrapMoneyReaction'}>
+                                <img  className={'wrapMoneyReactionImg reactionImgTop card0'} src={cash_0} alt="not interesting"/>
+                                <img  className={'wrapMoneyReactionImg reactionImgBot card1'} src={cash_1} alt="interesting"/>
+                                <img  className={'wrapMoneyReactionImg reactionImgBot card2'} src={cash_2} alt="ok that's good"/>
+                                <img  className={'wrapMoneyReactionImg reactionImgBot card3'} src={cash_3} alt="I'm in!"/>
                             </div>
                         </div>
                     </Container>
