@@ -32,33 +32,33 @@ const Blog = () => {
         setSalary(cash)
     }
 
-    const reactionImages = document.querySelectorAll('.wrapMoneyReactionImg') /*получили картинки*/
+    //const reactionImages = document.querySelectorAll('.wrapMoneyReactionImg') /*получили картинки*/
 
     const makeInvisible = () => {
-        reactionImages.forEach(function (element) {
-            element.classList.remove('reactionImgTop')
-            element.classList.remove('reactionImgBot')
-            element.classList.add('reactionImgBot')
+
+        document.querySelectorAll('.wrapMoneyReactionImg').forEach(function (element) {
+            element.style.visibility = 'hidden'
         })
     }
 
     const makeVisible = (cash) => {
-        console.log(cash)
-       // makeInvisible()
-        if ( 20000 > cash > 0) {
-            document.querySelector('.card0').classList.add('reactionImgTop')
+        makeInvisible()
+        console.log('это до if' + cash)
+        if ( (20000 < cash) && (cash < 30000) ) {
+            document.querySelector('.card0').style.visibility = 'visible'
+            console.log('if №0' + cash)
         }
-        if ( 30000 > cash > 20000) {
-            document.querySelector('.card1').classList.add('reactionImgTop')
+        if ( (30000 < cash) && (cash < 40000)) {
+            document.querySelector('.card1').style.visibility = 'visible'
+            console.log('if №1' + cash)
         }
-        if ( 40000 > cash > 30000) {
-            document.querySelector('.card2').classList.add('reactionImgTop')
+        if ( (40000 < cash) && (cash < 50000)) {
+            document.querySelector('.card2').style.visibility = 'visible'
+            console.log('if №2' + cash)
         }
-        if ( 50000 > cash > 40000) {
-            document.querySelector('.card3').classList.add('reactionImgTop')
-        }
-        else {
-            document.querySelector('.card0').classList.add('reactionImgTop')
+        if ( 50000 < cash ) {
+            document.querySelector('.card3').style.visibility = 'visible'
+            console.log('if №3' + cash)
         }
     }
 
@@ -162,10 +162,10 @@ const Blog = () => {
                                 </div>
                             </div>
                             <div className={'wrapMoneyReaction'}>
-                                <img  className={'wrapMoneyReactionImg reactionImgTop card0'} src={cash_0} alt="not interesting"/>
-                                <img  className={'wrapMoneyReactionImg reactionImgBot card1'} src={cash_1} alt="interesting"/>
-                                <img  className={'wrapMoneyReactionImg reactionImgBot card2'} src={cash_2} alt="ok that's good"/>
-                                <img  className={'wrapMoneyReactionImg reactionImgBot card3'} src={cash_3} alt="I'm in!"/>
+                                <img  className={'wrapMoneyReactionImg  card0'} style={{visibility: 'visible'}} src={cash_0} alt="not interesting"/>
+                                <img  className={'wrapMoneyReactionImg  card1'} style={{visibility: 'hidden'}} src={cash_1} alt="interesting"/>
+                                <img  className={'wrapMoneyReactionImg  card2'} style={{visibility: 'hidden'}} src={cash_2} alt="ok that's good"/>
+                                <img  className={'wrapMoneyReactionImg  card3'} style={{visibility: 'hidden'}} src={cash_3} alt="I'm in!"/>
                             </div>
                         </div>
                     </Container>
