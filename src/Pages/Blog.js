@@ -99,77 +99,78 @@ const Blog = () => {
     }
 
         return (
-            <div className="wrapContact">
-                <div className="wrapContactContainer">
-                    <Container style={{ width: '500px' }}>
-                        <Form>
-                            {['radio'].map((type) => (
-                                <div key={`inline-${type}`} className="mb-3">
-                                    <Form.Check
-                                        inline
-                                        label="Руб"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-1`}
-                                        value={'Руб'}
-                                        onChange={ event => setCurrency(event.target.value)}
+            <div className="wrapMoney">
+                <div className="wrapMoneyContainer">
+                    {/*<Form>
+                    {['radio'].map((type) => (
+                        <div key={`inline-${type}`} className="mb-3">
+                            <Form.Check
+                                inline
+                                label="Руб"
+                                name="group1"
+                                type={type}
+                                id={`inline-${type}-1`}
+                                value={'Руб'}
+                                onChange={ event => setCurrency(event.target.value)}
+                            />
+                            <Form.Check
+                                inline
+                                label="$"
+                                name="group1"
+                                type={type}
+                                id={`inline-${type}-2`}
+                                value={'$'}
+                                onChange={ event => setCurrency(event.target.value)}
+                            />
+                            <Form.Check
+                                inline
+                                label="Euro"
+                                name="group1"
+                                type={type}
+                                id={`inline-${type}-3`}
+                                value={'Euro'}
+                                onChange={ event => setCurrency(event.target.value)}
+                            />
+                        </div>
+                    ))}
+                </Form>*/}
+                    <div className='wrapMoneyForm'>
+                        <p>Введите своё предложение</p>
+                        <div className="wrapMoneyControl">
+                            <div className="wrapMoneyControlInput">
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text>Руб</InputGroup.Text>
+                                    <Form.Control
+                                        aria-label="Amount (to the nearest dollar)"
+                                        placeholder="enter a number"
+                                        id="cashInput"
+                                        onChange={handleCashInput}
                                     />
-                                    <Form.Check
-                                        inline
-                                        label="$"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-2`}
-                                        value={'$'}
-                                        onChange={ event => setCurrency(event.target.value)}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="Euro"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-3`}
-                                        value={'Euro'}
-                                        onChange={ event => setCurrency(event.target.value)}
-                                    />
-                                </div>
-                            ))}
-                        </Form>
-                        <div className="wrapMoney">
-                            <div className={'wrapMoneyForm'}>
-                                <p>Введите своё предложение</p>
-                                <div className="wrapMoneyControl">
-                                    <div className="wrapMoneyControlInput">
-                                        <InputGroup className="mb-3">
-                                            <InputGroup.Text>{currency}</InputGroup.Text>
-                                            <Form.Control
-                                                aria-label="Amount (to the nearest dollar)"
-                                                placeholder="enter a number"
-                                                id="cashInput"
-                                                onChange={handleCashInput}
-                                            />
-                                        </InputGroup>
-                                    </div>
-                                    <div className="wrapMoneyControlButton">
-                                        <Button variant="primary" onClick={() => subCash(Number(cashInput))}>Submit</Button>
-                                        <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
-                                        <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
-                                        <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>
-                                    </div>
-                                </div>
-                                <div className="wrapMoneyState">
-                                    <p>Ваше предложение составляет {cash} {currency} </p>
-                                </div>
+                                </InputGroup>
                             </div>
-                            <div className={'wrapMoneyReaction'}>
+                            <div className="wrapMoneyControlButton">
+                                <Button variant="primary" onClick={() => subCash(Number(cashInput))}>Submit</Button>
+                                {/* <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
+                            <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
+                            <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>*/}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="wrapMoneyState">
+                        <p>Ваше предложение составляет:</p>
+                        <div className="wrapMoneyStateBox">
+                            <p className='wrapMoneyStateBoxText'> {cash} руб.</p>
+                            <div className='wrapMoneyReaction'>
                                 <img  className={'wrapMoneyReactionImg  card0'} style={{visibility: 'visible'}} src={cash_0} alt="not interesting"/>
                                 <img  className={'wrapMoneyReactionImg  card1'} style={{visibility: 'hidden'}} src={cash_1} alt="interesting"/>
                                 <img  className={'wrapMoneyReactionImg  card2'} style={{visibility: 'hidden'}} src={cash_2} alt="ok that's good"/>
                                 <img  className={'wrapMoneyReactionImg  card3'} style={{visibility: 'hidden'}} src={cash_3} alt="I'm in!"/>
                             </div>
                         </div>
-                    </Container>
+
+                    </div>
                 </div>
+
                 <div className="wrapContactContainer">
                     <Container style={{ width: '500px' }}>
                         <Button variant="primary" onClick={() => addCustomer(prompt())}>Add</Button>
