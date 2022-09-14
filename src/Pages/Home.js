@@ -5,6 +5,8 @@ import card_1 from "../Assets/Card_1.jpg"
 import card_2 from "../Assets/Card_2.jpg"
 import card_3 from "../Assets/Card_3.jpg"
 import '../css/home.css'
+import MoneyCard from "../Components/MoneyCard";
+import Message from "../Components/Message";
 
 
 
@@ -31,6 +33,8 @@ class Home extends Component {
                         Сайт написан с применением React Bootstrap, React-redux
                     </p>
                 </div>
+                <MoneyCard></MoneyCard>
+                <Message></Message>
                 <Container className="m-auto">
                     <h3 className="wrapContainerContentTitle m-3 text-center" >Мои учебные проекты</h3>
                     <CardGroup className="m-3">
