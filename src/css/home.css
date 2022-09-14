@@ -145,6 +145,13 @@
     margin-left: 4%;
 }
 
+.wrapMoneyStateBox {
+    display: flex;
+    min-height: 130px;
+}
+.wrapMoneyStateBoxText {
+    margin-top: 15%;
+}
 .wrapMoneyReaction { /*контейнер с картинкой реакции*/
     position: relative;
     margin-left: 3%;
@@ -161,4 +168,20 @@
 }
 .reactionImgBot {
     visibility: hidden;
+}
+/****Message****/
+.wrapMessageBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.messageInput {
+    width: 70%;
+    margin-bottom: 15px;
+}
+.messageButton {
+    width: 10%;
+    min-width: 70px;
+    height: 36px;
+    margin-left: 2%;
 }

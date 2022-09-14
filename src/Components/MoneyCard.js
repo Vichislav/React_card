@@ -55,7 +55,7 @@ const MoneyCard = () => {
         makeInvisible()
         //handleSalary(cash)
         console.log('это до if '  + ' ' +  cash )
-        if ( (0 < cash) && (cash < 30000) ) {
+        if ( (0 <= cash) && (cash < 30000) ) {
             document.querySelector('.card0').style.visibility = 'visible'
             console.log('if №0' + ' ' +  cash)
         }
@@ -165,13 +165,17 @@ const MoneyCard = () => {
                     </div>
                 </div>
                 <div className="wrapMoneyState">
-                    <p>Ваше предложение составляет {cash} руб. </p>
-                    <div className='wrapMoneyReaction'>
-                        <img  className={'wrapMoneyReactionImg  card0'} style={{visibility: 'visible'}} src={cash_0} alt="not interesting"/>
-                        <img  className={'wrapMoneyReactionImg  card1'} style={{visibility: 'hidden'}} src={cash_1} alt="interesting"/>
-                        <img  className={'wrapMoneyReactionImg  card2'} style={{visibility: 'hidden'}} src={cash_2} alt="ok that's good"/>
-                        <img  className={'wrapMoneyReactionImg  card3'} style={{visibility: 'hidden'}} src={cash_3} alt="I'm in!"/>
+                    <p>Ваше предложение составляет:</p>
+                    <div className="wrapMoneyStateBox">
+                        <p className='wrapMoneyStateBoxText'> {cash} руб.</p>
+                        <div className='wrapMoneyReaction'>
+                            <img  className={'wrapMoneyReactionImg  card0'} style={{visibility: 'visible'}} src={cash_0} alt="not interesting"/>
+                            <img  className={'wrapMoneyReactionImg  card1'} style={{visibility: 'hidden'}} src={cash_1} alt="interesting"/>
+                            <img  className={'wrapMoneyReactionImg  card2'} style={{visibility: 'hidden'}} src={cash_2} alt="ok that's good"/>
+                            <img  className={'wrapMoneyReactionImg  card3'} style={{visibility: 'hidden'}} src={cash_3} alt="I'm in!"/>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
