@@ -48,15 +48,15 @@ const Blog = () => {
             document.querySelector('.card0').style.visibility = 'visible'
             console.log('if №0' + cash)
         }
-        if ( (30000 < cash) && (cash < 40000)) {
+        if ( (30000 <= cash) && (cash < 40000)) {
             document.querySelector('.card1').style.visibility = 'visible'
             console.log('if №1' + cash)
         }
-        if ( (40000 < cash) && (cash < 50000)) {
+        if ( (40000 <= cash) && (cash < 50000)) {
             document.querySelector('.card2').style.visibility = 'visible'
             console.log('if №2' + cash)
         }
-        if ( 50000 < cash ) {
+        if ( 50000 <= cash ) {
             document.querySelector('.card3').style.visibility = 'visible'
             console.log('if №3' + cash)
         }

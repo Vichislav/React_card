@@ -1,9 +1,9 @@
 
 const defaultState = {
-    cash: 5,
+    cash: 0,
 }
 
-export const cashReducer = (state =defaultState, action) => {
+export const cashReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SUBMIT_CASH":
             return {...state, cash: state.cash = action.payload}
