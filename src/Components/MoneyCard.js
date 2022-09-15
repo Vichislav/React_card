@@ -86,23 +86,25 @@ const MoneyCard = () => {
 
     }
 
-/*    const addCash = (value) => {
+    const addCash = (value) => {
         dispatch({type: "ADD_CASH", payload: value})
-        makeVisible(cash)
+        const currentCash = cash + value
+        makeVisible(currentCash)
         clearInputCash()
     }
 
     const getCash = (value) => {
         dispatch({type: "GET_CASH", payload: value})
-        makeVisible(cash)
+        const currentCash = cash - value
+        makeVisible(currentCash)
         clearInputCash()
     }
 
     const clearCash = (value) => {
         dispatch({type: "CLEAR_CASH", payload: value})
-        makeVisible(cash)
+        makeVisible(0)
         clearInputCash()
-    }*/
+    }
 
 
 
@@ -158,9 +160,9 @@ const MoneyCard = () => {
                         </div>
                         <div className="wrapMoneyControlButton">
                             <Button variant="primary" onClick={() => subCash(Number(cashInput))}>Submit</Button>
-                           {/* <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
+                            <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
                             <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
-                            <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>*/}
+                            <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>
                         </div>
                     </div>
                 </div>

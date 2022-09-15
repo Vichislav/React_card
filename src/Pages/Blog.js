@@ -43,22 +43,22 @@ const Blog = () => {
 
     const makeVisible = (cash) => {
         makeInvisible()
-        console.log('это до if' + cash)
-        if ( (20000 < cash) && (cash < 30000) ) {
+        console.log('это до if  ' + cash)
+        if ( (0 <= cash) && (cash < 30000) ) {
             document.querySelector('.card0').style.visibility = 'visible'
-            console.log('if №0' + cash)
+            console.log('if №0 ' + cash)
         }
         if ( (30000 <= cash) && (cash < 40000)) {
             document.querySelector('.card1').style.visibility = 'visible'
-            console.log('if №1' + cash)
+            console.log('if №1 ' + cash)
         }
         if ( (40000 <= cash) && (cash < 50000)) {
             document.querySelector('.card2').style.visibility = 'visible'
-            console.log('if №2' + cash)
+            console.log('if №2 ' + cash)
         }
         if ( 50000 <= cash ) {
             document.querySelector('.card3').style.visibility = 'visible'
-            console.log('if №3' + cash)
+            console.log('if №3 ' + cash)
         }
     }
 
@@ -73,13 +73,17 @@ const Blog = () => {
         clearInputCash()
 
     }
-    const addCash = (cash) => {
-        dispatch({type: "ADD_CASH", payload: cash}) /*прокидываем экшн*/
+    const addCash = (value) => {
+        dispatch({type: "ADD_CASH", payload: value}) /*прокидываем экшн*/
+        const currentCash = cash + value /*полюбому костыль*/
+        makeVisible(currentCash)
         clearInputCash()
     }
 
-    const getCash = (cash) => {
-        dispatch({type: "GET_CASH", payload: cash})
+    const getCash = (value) => {
+        dispatch({type: "GET_CASH", payload: value})
+        const currentCash = cash - value
+        makeVisible(currentCash)
         clearInputCash()
     }
     const clearCash = (cash) => {

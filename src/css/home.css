@@ -151,6 +151,7 @@
 .squareButton { /*кнопки + и - */
     margin-left: 4%;
     width: 20%;
+    min-width: 40px;
 }
 .clearButton { /*кнопки + и - */
     margin-left: 4%;
