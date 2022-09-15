@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React_card/static/css/main.2404e8c6.css",
+    "main.js": "/React_card/static/js/main.9766e9da.js",
+    "static/js/787.28cb0dcd.chunk.js": "/React_card/static/js/787.28cb0dcd.chunk.js",
+    "static/media/photo3.jpg": "/React_card/static/media/photo3.12b4d51383e94c2f9b7f.jpg",
+    "static/media/photo2.jpg": "/React_card/static/media/photo2.2ad0f1df6d1d57098c7a.jpg",
+    "static/media/photo1.jpg": "/React_card/static/media/photo1.6fbf508f726ed6b0361f.jpg",
+    "static/media/Card_2.jpg": "/React_card/static/media/Card_2.556b698616282f028a65.jpg",
+    "static/media/Card_1.jpg": "/React_card/static/media/Card_1.d937b07ef31311cbac56.jpg",
+    "static/media/about1.jpg": "/React_card/static/media/about1.f6c3513f7974e569a73f.jpg",
+    "static/media/photo4.jpg": "/React_card/static/media/photo4.368d83c67bee7dc162cc.jpg",
+    "static/media/cash_0.jpg": "/React_card/static/media/cash_0.84d17b3cd1a70cfa7693.jpg",
+    "static/media/Card_3.jpg": "/React_card/static/media/Card_3.74ecce29243812e8fd8b.jpg",
+    "static/media/cash_1.jpg": "/React_card/static/media/cash_1.53d304ed03a639e946d3.jpg",
+    "static/media/about2.jpg": "/React_card/static/media/about2.62fc7c3a19f93c88338f.jpg",
+    "index.html": "/React_card/index.html",
+    "main.2404e8c6.css.map": "/React_card/static/css/main.2404e8c6.css.map",
+    "main.9766e9da.js.map": "/React_card/static/js/main.9766e9da.js.map",
+    "787.28cb0dcd.chunk.js.map": "/React_card/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2404e8c6.css",
+    "static/js/main.9766e9da.js"
+  ]
+}
