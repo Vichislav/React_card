@@ -150,9 +150,9 @@ const Blog = () => {
                             </div>
                             <div className="wrapMoneyControlButton">
                                 <Button variant="primary" onClick={() => subCash(Number(cashInput))}>Submit</Button>
-                                {/* <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
-                            <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
-                            <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>*/}
+                                <Button variant="primary" className={'squareButton'} onClick={() => addCash(Number(cashInput))}>+</Button>
+                                <Button variant="primary" className={'squareButton'} onClick={() => getCash(Number(cashInput))}>-</Button>
+                                <Button variant="danger" className={'clearButton'} onClick={() => clearCash(Number(cashInput))}>Clear</Button>
                             </div>
                         </div>
                     </div>

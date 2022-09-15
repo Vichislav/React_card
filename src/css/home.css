@@ -22,7 +22,7 @@
     margin-top: 5%;
 }
 .wrapContainerContent { /*контейнер для текста слева*/
-    margin-left: 5%;
+    margin-right: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,17 +33,28 @@
 .wrapContainerContentTitle {
     text-align: center;
     margin-top: 5%;
-    min-width: 400px;
+    min-width: 300px;
     width: 50%;
-    font-size: 3vm;
+    font-size: 2vh;
     color: black;
 }
 .wrapContainerContentText {
     text-align: center;
-    min-width: 400px;
+    min-width: 300px;
     width: 50%;
-    font-size: 2vm;
+    font-size: 1.5vh;
     color: black;
+}
+.wrapContainerContentGradient {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 220px;
+    top: 150px;
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+    opacity: 0.9;
+    filter: blur(75px);
+    transform: rotate(5.78deg);
 }
 /*******************************CAROUSEL**************************************/
 .carWrap { /*общий контейнер*/

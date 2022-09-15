@@ -23,6 +23,7 @@ class Home extends Component {
                             Этот сайт я сделал, как удобный вариант демонстрации своего уровня познания JavaScript,
                             и неплохую возможность рассказать о себе.
                         </p>
+                        <div className={'wrapContainerContentGradient'}></div>
                     </div>
                     <div className="wrapContainerCarousel">
                         <CarouselBox />
