@@ -141,7 +141,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     border: solid 1px gray;
-    border-radius: 1%;
+    border-radius: 5px;
     padding: 2%;
 }
 
@@ -192,7 +192,7 @@
 .reactionImgBot {
     visibility: hidden;
 }
-/****Message****/
+/***********************Message**************************/
 .wrapMessageBox {
     display: flex;
     flex-wrap: wrap;
@@ -207,4 +207,36 @@
     min-width: 70px;
     height: 36px;
     margin-left: 2%;
+}
+.messageButtonEdit {
+    width: 10%;
+    min-width: 70px;
+    height: 36px;
+    margin-left: 2%;
+}
+.wrapMessageBoxContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 10px 10px 10px 0px;
+}
+.wrapMessageBoxContainerContent {
+    display: flex;
+    margin-bottom: 1%;
+    margin-right: 2%;
+    height: 36px;
+    width: 60%;
+    min-width: 150px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.wrapMessageBoxContainerText {
+    padding-left: 2%;
+    padding-top: 1%;
+}
+.wrapMessageBoxContainerBtn {
+    display: flex;
+    flex-direction: row;
 }
