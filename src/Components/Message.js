@@ -3,7 +3,7 @@ import {Button, Container} from "react-bootstrap";
 
 import '../css/home.css'
 import {useDispatch, useSelector} from "react-redux";
-import {addCustomerAction, removeCustomerAction} from "../store/customerReducer";
+import {addCustomerAction, editCustomerAction, removeCustomerAction} from "../store/customerReducer";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 
@@ -13,6 +13,8 @@ const Message = () => {
     const dispatch = useDispatch()
 
     const customers = useSelector(state => state.customerReducer.customers)
+
+
 
     /**состояние input для ввода сообщения**/
     const [messageInput, setMessageInput] = useState('');
@@ -36,8 +38,17 @@ const Message = () => {
         clearInputCash()
     }
 
-    const removeCustomer = (customer) =>{
+    const removeCustomer = (customer) => {
         dispatch(removeCustomerAction(customer.id))
+    }
+
+    const editCustomer = (customer) => {
+        const currentName = prompt("Внесите изменения",[customer.name])
+        const currentCustomer = {
+            name: currentName,
+            id: customer.id
+        }
+        dispatch(editCustomerAction(currentCustomer))
     }
 
     return (
@@ -59,14 +70,16 @@ const Message = () => {
                     {customers.length > 0 ? // если длина массива > 0 то отрисовываем первый див если нет то div после :
                         <div>
                             {customers.map(customer => //пробежались по массиву и для каждого элемента создаем div с именем элемента
-                                <div onClick={() => removeCustomer(customer)}
+                                <div
                                      style={{
                                          fontsize: "2rem",
                                          border: "1px solid black",
                                          marginTop: 5,
                                          padding: "10px"
                                      }}>
-                                    {customer.name}
+                                   <h1>{customer.name}</h1>
+                                    <Button variant={'danger'}  onClick={() => removeCustomer(customer)} >Delete</Button>
+                                    <Button variant={'primary'}  onClick={() => editCustomer(customer)} >Edit</Button>
                                 </div>
                             )}
                         </div>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Container} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import '../css/home.css'
@@ -18,58 +18,57 @@ const MoneyCard = () => {
     /**состояние input для ввода зарплаты**/
     const [cashInput, setCashInput] = useState('');
     /**состояние для радиокнопок выбора волют**/
-    //const [currency, setCurrency] = useState('Руб');
+    const [currency, setCurrency] = useState('Руб');
     /**состояние для расчета зарплаты**/
-    //const [salary, setSalary] = useState();
+    const [salary, setSalary] = useState(0);
 
     /*устанавливаем значение состояния инпута*/
     const handleCashInput = (event) => {
         setCashInput(event.target.value)
     }
 
-    // /*устанавливаем значение зарплаты*/
-    // const handleSalary = (cash) => {
-    //     if (currency === 'Руб') {
-    //         setSalary(cash)
-    //     }
-    //     if (currency === '$') {
-    //         setSalary(cash*60)
-    //     }
-    //     if (currency === 'Euro') {
-    //         setSalary(cash*65)
-    //     }
-    //     else {
-    //         setSalary(cash)
-    //     }
-    // }
+     /*устанавливаем значение зарплаты*/
+    /*const handleSalary = (cash) => {
+        if (currency === 'Руб') {
+            setSalary(cash)
+        }
+        if (currency === '$') {
+             setSalary(cash*60)
+         }
+        if (currency === 'Euro') {
+             setSalary(cash*65)
+         }
+         else {
+             setSalary(cash)
+         }
+     }*/
 
     /*скпываем все картинки реакции*/
     const makeInvisible = () => {
-
         document.querySelectorAll('.wrapMoneyReactionImg').forEach(function (element) {
             element.style.visibility = 'hidden'
         })
     }
 
-    const makeVisible = (cash) => {
+    const makeVisible = (value) => {
         makeInvisible()
         //handleSalary(cash)
-        console.log('это до if '  + ' ' +  cash )
-        if ( (0 <= cash) && (cash < 30000) ) {
+        console.log('это до if '  + ' ' +  value )
+        if ( (0 <= value) && (value < 35000) ) {
             document.querySelector('.card0').style.visibility = 'visible'
-            console.log('if №0' + ' ' +  cash)
+            console.log('if №0' + ' ' +  value)
         }
-        if ( (30000 < cash) && (cash < 40000)) {
+        if ( (35000 <= value) && (value < 50000)) {
             document.querySelector('.card1').style.visibility = 'visible'
-            console.log('if №1'  + ' ' +  cash)
+            console.log('if №1'  + ' ' +  value)
         }
-        if ( (40000 < cash) && (cash < 50000)) {
+        if ( (50000 <= value) && (value < 65000)) {
             document.querySelector('.card2').style.visibility = 'visible'
-            console.log('if №2' + ' ' + cash)
+            console.log('if №2' + ' ' + value)
         }
-        if ( 50000 <= cash ) {
+        if ( 65000 <= value ) {
             document.querySelector('.card3').style.visibility = 'visible'
-            console.log('if №3'  + ' ' +  cash)
+            console.log('if №3'  + ' ' +  value)
         }
     }
 
@@ -111,8 +110,8 @@ const MoneyCard = () => {
     return (
         <div className="wrapMoney">
             <div className="wrapMoneyContainer">
-                {/*<Form>
-                    {['radio'].map((type) => (
+                <Form>
+                    {/*{['radio'].map((type) => (
                         <div key={`inline-${type}`} className="mb-3">
                             <Form.Check
                                 inline
@@ -129,7 +128,7 @@ const MoneyCard = () => {
                                 name="group1"
                                 type={type}
                                 id={`inline-${type}-2`}
-                                value={'$'}
+                                value={'Dollar'}
                                 onChange={ event => setCurrency(event.target.value)}
                             />
                             <Form.Check
@@ -142,8 +141,8 @@ const MoneyCard = () => {
                                 onChange={ event => setCurrency(event.target.value)}
                             />
                         </div>
-                    ))}
-                </Form>*/}
+                    ))}*/}
+                </Form>
                 <div className='wrapMoneyForm'>
                     <p>Введите своё предложение</p>
                     <div className="wrapMoneyControl">
