@@ -12,17 +12,23 @@
     justify-content: center;
     align-items: center;
 }
+@media only screen and (max-width: 1100px) {
+    .wrapContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
 .wrapImg {
     max-width:100%;
     height:auto;
 }
 .wrapContainerCarousel {
     height: auto;
-    min-width: 450px;
+    min-width: 400px;
     width: 40%;
     margin-top: 5%;
 }
-.wrapContainerContent { /*контейнер для текста слева*/
+.wrapContainerContent { /*контейнер для текста слева и градиента*/
     margin-right: 10%;
     display: flex;
     justify-content: center;
@@ -31,6 +37,7 @@
     height: 40%; /*!!!*/
     width: 50%;
 }
+
 .wrapContainerContentTitle {
     text-align: center;
     margin-top: 5%;
@@ -70,7 +77,8 @@
 /*******************************CAROUSEL**************************************/
 .carWrap { /*общий контейнер*/
     height: 352px; /*!!!*/
-    width: 450px;
+    width: 100%;
+    min-width: 400px;
     position: relative;
     z-index: 4;
 }
@@ -79,6 +87,8 @@
 
     top: -3%;
     right: 26%;
+    width: 37.8%;
+    height: auto; /*это для пропорционального масштабирования*/
     position: absolute;
     z-index: 6;
 }
@@ -93,8 +103,9 @@
 
 }
 .carWrapCarSlideText {
-    font-size: 2vm;
+    font-size: 14px;
     color: black;
+    line-height: 15px;
 }
 .wrapBelt {
     background-color: wheat;
