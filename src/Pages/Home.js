@@ -4,6 +4,7 @@ import {Button, Card, CardGroup, Container} from "react-bootstrap";
 import card_1 from "../Assets/Card_1.jpg"
 import card_2 from "../Assets/Card_2.jpg"
 import card_3 from "../Assets/Card_3.jpg"
+import card_4 from "../Assets/Card_4.jpg"
 import '../css/home.css'
 import MoneyCard from "../Components/MoneyCard";
 import Message from "../Components/Message";
@@ -36,29 +37,28 @@ class Home extends Component {
                 </div>
                 <MoneyCard></MoneyCard>
                 <Message></Message>
-                <Container className="m-auto">
-                    <h3 className="wrapContainerContentTitle m-3 text-center" >Мои учебные проекты</h3>
-                    <CardGroup className="m-3">
-                        <Card  style={{ width: '18rem' }} className="p-1 bg-dark">
+                <div className={'wrapStudy'}>
+                    <div className={'wrapStudyRow'}>
+                        <Card  className="wrapStudyRowItemLeft">
                             <Card.Img variant="top"
                                       src={card_1}
-                                      style={{display: "block"}}
+                                      className={'wrapStudyRowItemImg'}
                             />
                             <Card.Body>
                                 <Card.Title style={{color: "white"}}>Unit test (Angular app)</Card.Title>
                                 <Card.Text style={{color: "white"}}>
                                     Тестирование Angular приложения с применением Karma и Jasmine
                                 </Card.Text>
-                                    <Button variant="primary"
-                                            onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
-                                    >Подробнее  на git
-                                    </Button>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
+                                >Подробнее  на git
+                                </Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }} className="p-1">
+                        <Card  className="wrapStudyRowItemRight">
                             <Card.Img variant="top"
                                       src={card_2}
-                                      style={{display: "block"}}
+                                      className={'wrapStudyRowItemImg'}
                             />
                             <Card.Body>
                                 <Card.Title>Адаптивная верстка</Card.Title>
@@ -72,14 +72,16 @@ class Home extends Component {
                                 </Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }} className="p-1 bg-dark">
+                    </div>
+                    <div className={'wrapStudyRow'}>
+                        <Card  className="wrapStudyRowItemRight">
                             <Card.Img variant="top"
                                       src={card_3}
-                                      style={{display: "block"}}
+                                      className={'wrapStudyRowItemImg'}
                             />
                             <Card.Body>
-                                <Card.Title style={{color: "white"}}>Работа с JSON</Card.Title>
-                                <Card.Text style={{color: "white"}}>
+                                <Card.Title>Работа с JSON</Card.Title>
+                                <Card.Text>
                                     Пример выполнения задания по работе с данными, получаемыми из файла JSON
                                 </Card.Text>
                                 <Button variant="primary"
@@ -88,8 +90,24 @@ class Home extends Component {
                                 </Button>
                             </Card.Body>
                         </Card>
-                    </CardGroup>
-                </Container>
+                        <Card  className="wrapStudyRowItemLeft">
+                            <Card.Img variant="top"
+                                      src={card_4}
+                                      className={'wrapStudyRowItemImg'}
+                            />
+                            <Card.Body>
+                                <Card.Title style={{color: "white"}}>Angular app</Card.Title>
+                                <Card.Text style={{color: "white"}}>
+                                    Angular todo приложение с применением RxJs и NgRx
+                                </Card.Text>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav/Angular_Todo_app")}
+                                >Подробнее  на git
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
             </div>
         );
     }

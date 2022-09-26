@@ -251,3 +251,45 @@
     display: flex;
     flex-direction: row;
 }
+/********************wrapCard****************************/
+
+.wrapStudy {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapStudyRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapStudyRowItemLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 270px;
+    height: 528px;
+    background-color: #565e64;
+}
+.wrapStudyRowItemImg {
+    margin-top: 5px;
+    width: 250px;
+    height: auto;
+ }
+.wrapStudyRowItemRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 270px;
+    height: 528px;
+    background-color: #bacbe6;
+}
