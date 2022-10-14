@@ -22,12 +22,12 @@ export default class Header extends Component {
                                 alt="Logo"
                             />
                         </Navbar.Brand>
-                        <Nav className="me-auto">
+                       {/* <Nav className="me-auto">
                             <Nav.Link href="/" > Home </Nav.Link>
                             <Nav.Link href="/about" > About me </Nav.Link>
                             <Nav.Link href="/contacts" > Forms </Nav.Link>
                             <Nav.Link href="/blog" > Blog </Nav.Link>
-                        </Nav>
+                        </Nav>*/}
                     </Container>
                 </Navbar>
                 <Router >

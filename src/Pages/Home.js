@@ -8,6 +8,7 @@ import card_4 from "../Assets/Card_4.jpg"
 import '../css/home.css'
 import MoneyCard from "../Components/MoneyCard";
 import Message from "../Components/Message";
+import ContactsComponents from "../Components/ContactsComponents";
 
 
 
@@ -37,6 +38,7 @@ class Home extends Component {
                 </div>
                 <MoneyCard></MoneyCard>
                 <Message></Message>
+                <ContactsComponents></ContactsComponents>
                 <div className={'wrapStudy'}>
                     <div className={'wrapStudyRow'}>
                         <Card  className="wrapStudyRowItemLeft">
