@@ -117,6 +117,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.beltText {
+    position: relative;
+    left: -70%;
+    animation-name: BeltTextAnimation;
+    animation-duration: 15s;
+}
+
+@keyframes BeltTextAnimation {
+    0% {
+        left: -70%;
+    }
+    100% {
+        left: 170%;
+    }
 }
 /*******************************CONTACT**************************************/
 .wrapContact {
@@ -299,4 +316,23 @@
     width: 270px;
     height: 528px;
     background-color: #bacbe6;
+}
+/**HEADER**/
+
+
+.headerLogo { /*сам логотип*/
+    height: 30px;
+    width: 30px;
+    transform: rotate(0grad);
+    animation-name: headerLogoAnimation;
+    animation-duration: 2s;
+}
+
+@keyframes headerLogoAnimation {
+    0% {
+        transform: rotate(0grad);
+    }
+    100% {
+        transform: rotate(720grad);
+    }
 }

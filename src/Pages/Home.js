@@ -32,7 +32,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className="wrapBelt">
-                    <p className="wrapContainerContentText mt-2">
+                    <p className="wrapContainerContentText mt-2 beltText">
                         Сайт написан с применением React Bootstrap
                     </p>
                 </div>

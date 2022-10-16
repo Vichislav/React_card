@@ -6,6 +6,7 @@ import Home from "../Pages/Home"
 import About from "../Pages/About"
 import Contacts from "../Pages/Contacts";
 import Blog from "../Pages/Blog";
+import '../css/home.css'
 
 export default class Header extends Component {
     render() {
@@ -13,12 +14,10 @@ export default class Header extends Component {
             <Container>
                 <Navbar bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="/">
+                        <Navbar.Brand href="/" >
                             <img
                                 src={logo}
-                                height="30"
-                                width="30"
-                                className="d-inline-block align-top"
+                                className="headerLogo"
                                 alt="Logo"
                             />
                         </Navbar.Brand>
