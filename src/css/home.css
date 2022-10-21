@@ -124,7 +124,14 @@
     position: relative;
     left: -70%;
     animation-name: BeltTextAnimation;
-    animation-duration: 15s;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@media only screen and (max-width: 1100px) {
+    .beltText {
+        animation-duration: 14s;
+    }
 }
 
 @keyframes BeltTextAnimation {
@@ -134,6 +141,10 @@
     100% {
         left: 170%;
     }
+}
+
+.beltText:hover{
+    animation-play-state: paused;
 }
 /*******************************CONTACT**************************************/
 .wrapContact {
@@ -301,6 +312,10 @@
     height: 528px;
     background-color: #565e64;
 }
+
+.wrapStudyRowItemLeft:hover, .wrapStudyRowItemLeft:focus, .wrapStudyRowItemLeft:active{
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
 .wrapStudyRowItemImg {
     margin-top: 5px;
     width: 250px;
@@ -316,6 +331,10 @@
     width: 270px;
     height: 528px;
     background-color: #bacbe6;
+}
+
+.wrapStudyRowItemRight:hover, .wrapStudyRowItemRight:focus, .wrapStudyRowItemRight:active{
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 /**HEADER**/
 
