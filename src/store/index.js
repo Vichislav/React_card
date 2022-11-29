@@ -9,4 +9,5 @@ const rootReducer = combineReducers({
     cashReducer,
 })
 
+
 export const store = createStore(rootReducer, composeWithDevTools())

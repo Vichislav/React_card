@@ -9,6 +9,7 @@ import '../css/home.css'
 import MoneyCard from "../Components/MoneyCard";
 import Message from "../Components/Message";
 import ContactsComponents from "../Components/ContactsComponents";
+import Weather from "../Components/Weather";
 
 
 
@@ -38,6 +39,7 @@ class Home extends Component {
                 </div>
                 <MoneyCard></MoneyCard>
                 <Message></Message>
+                <Weather></Weather>
                 <ContactsComponents></ContactsComponents>
                 <div className={'wrapStudy'}>
                     <div className={'wrapStudyRow'}>

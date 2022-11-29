@@ -144,7 +144,7 @@ const MoneyCard = () => {
                     ))}*/}
                 </Form>
                 <div className='wrapMoneyForm'>
-                    <p>Введите своё предложение</p>
+                    <p className={'wrapMoneyStateTitle'}>Введите своё предложение</p>
                     <div className="wrapMoneyControl">
                         <div className="wrapMoneyControlInput">
                             <InputGroup className="mb-3">
