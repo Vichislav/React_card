@@ -123,7 +123,6 @@
     }
 }
 .carWrapImg { /*контейнер для картинки, она поверх*/
-
     top: -3%;
     right: 26%;
     width: 37.8%;
@@ -131,12 +130,27 @@
     position: absolute;
     z-index: 6;
 }
-.carWrapCar { /*контейнер для карусели, она внизу*/
+.carWrapCar { /*контейнер для контейнера карусели, она внизу*/
     position: relative;
     z-index: 1;
     height: 90%;
 }
+.carWrapCarContainer { /*контейнер для карусели */
+    width: 50%;
+    margin: auto;
+    height: auto;
+}
+@media only screen and (max-width: 420px) {
+    .carWrapCarContainer {
+        width: 60%;
+    }
+    .carWrapImg { /*контейнер для картинки, она поверх*/
+        top: 0%;
+        right: 25%;
+        width: 40%;
+    }
 
+}
 .carWrapImgPhoto { /*сама картинка головы*/
     height: auto;
     width: 70%;

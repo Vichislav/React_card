@@ -17,9 +17,8 @@ class CarouselBox extends Component {
                     />
                 </div>
                 <div className="carWrapCar">
-                    <Container className="w-50 m-auto"
-                               aria-valuemax={"100%"}
-                               height="auto">
+                    <Container className="carWrapCarContainer"
+                               aria-valuemax={"100%"}>
                         <Carousel variant="dark" >
                             <Carousel.Item >
                                 <img
