@@ -11,6 +11,8 @@
     /*flex-wrap: wrap;*/
     justify-content: center;
     align-items: center;
+    width: 100%; /**/
+    min-width: 360px;/**/
 }
 @media only screen and (max-width: 1100px) {
     .wrapContainer {
@@ -24,18 +26,18 @@
 }
 .wrapContainerCarousel {
     height: auto;
-    width: 450px;
+    width: 100%;
     /*width: 40%;*/
     margin-top: 15px;
 }
 .wrapContainerContent { /*контейнер для текста слева и градиента*/
-    margin-right: 10%;
+    margin-right: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: auto; /*!!!*/
-    width: 400px;
+    width: 100%;
 }
 
 .wrapContainerContentTitle {
@@ -77,14 +79,47 @@
 /*******************************CAROUSEL**************************************/
 .carWrap { /*общий контейнер*/
     height: 352px; /*!!!*/
-    width: 100%;
-    min-width: 450px; /***/
+    width: 70%;
+    min-width: 335px; /***/
     position: relative;
     z-index: 4;
 }
+@media only screen and (max-width: 1400px) {
+    .carWrap {
+        height: auto;
+        width: 70%;
+        min-height: 335px;
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .carWrap {
+        width: 85%;
+    }
+}
 @media only screen and (max-width: 1100px) {
     .carWrap {
-        left: -10%;
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 990px) {
+    .carWrap {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 760px) {
+    .carWrap {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .carWrap {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .carWrap {
+        width: 100%;
     }
 }
 .carWrapImg { /*контейнер для картинки, она поверх*/
@@ -99,6 +134,7 @@
 .carWrapCar { /*контейнер для карусели, она внизу*/
     position: relative;
     z-index: 1;
+    height: 90%;
 }
 
 .carWrapImgPhoto { /*сама картинка головы*/
@@ -130,7 +166,7 @@
 
 @media only screen and (max-width: 1100px) {
     .beltText {
-        animation-duration: 14s;
+        animation-duration: 17s;
     }
 }
 
