@@ -226,9 +226,8 @@
 .wrapMoney {
     margin: auto;
     width: 90%;
-
-
 }
+
 .wrapMoneyContainer {
     margin-top: 2%;
     display: flex;
@@ -242,10 +241,20 @@
 .wrapMoneyForm { /*формма с инпутами и кнопками*/
     width: 60%;
 }
+@media only screen and (max-width: 767px) {
+    .wrapMoneyForm {
+        width: 90%;
+    }
+    .wrapMoneyState {
+        padding-top: 10px;
+    }
+}
 .wrapMoneyControlInput {
-    width: 80%
+    width: 95%;
+    min-width: 190px;
 }
 .wrapMoneyState {
+    margin: auto;
     height: 200px;
 }
 
