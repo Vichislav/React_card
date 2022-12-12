@@ -238,6 +238,16 @@
     padding: 2%;
 }
 
+.wrapEditBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.messageEditInput {
+    width: 60%;
+}
+
 .wrapMoneyForm { /*формма с инпутами и кнопками*/
     width: 60%;
 }

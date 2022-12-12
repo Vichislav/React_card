@@ -18,15 +18,20 @@ const Message = () => {
 
     /**состояние input для ввода сообщения**/
     const [messageInput, setMessageInput] = useState('');
+    /**состояние input для редактирования сообщения**/
+    const [editInput, setEditInput] = useState('');
 
 
     const handleMessageInput = (event) => {
         setMessageInput(event.target.value)
     }
+    const handleEditInput = (event) => {
+        setEditInput(event.target.value)
+    }
 
     const clearInputCash = () => {
         setMessageInput('') /*устанавливаем 0 значение состояния инпута*/
-        document.getElementById('massageInput').value = ''  /*обнуляем отображение в инпуте на странице*/
+        document.getElementById('messageInput').value = ''  /*обнуляем отображение в инпуте на странице*/
     }
 
     const addCustomer = (name) => {
@@ -43,7 +48,9 @@ const Message = () => {
     }
 
     const editCustomer = (customer) => {
-        const currentName = prompt("Внесите изменения",[customer.name])
+        //const currentName = prompt("Внесите изменения",[customer.name])
+        setEditInput( document.getElementById('messageEditInput').value)
+        const currentName = editInput;
         const currentCustomer = {
             name: currentName,
             id: customer.id
@@ -51,16 +58,31 @@ const Message = () => {
         dispatch(editCustomerAction(currentCustomer))
     }
 
+    const newEditCustomer = (customer) => {
+        document.getElementById('messageEditInput').value = customer.name;
+    }
+
     return (
         <div className="wrapMoney">
             <div className="wrapMoneyContainer">
                 <Container >
+                    <div className='wrapEditBox'>
+                        <InputGroup className="messageEditInput">
+                            <Form.Control
+                                aria-label="Amount (to the nearest dollar)"
+                                placeholder=""
+                                id="messageEditInput"
+                                onChange={handleEditInput}
+                            />
+                        </InputGroup>
+                        <Button  className={'messageButton'} variant="primary" onClick={() => editCustomer(messageInput)}>newEdit</Button>
+                    </div>
                     <div className='wrapMessageBox'>
                         <InputGroup className="messageInput">
                             <Form.Control
                                 aria-label="Amount (to the nearest dollar)"
                                 placeholder="enter yor message"
-                                id="massageInput"
+                                id="messageInput"
                                 onChange={handleMessageInput}
                             />
                         </InputGroup>
@@ -75,7 +97,7 @@ const Message = () => {
                                         <p className={'wrapMessageBoxContainerText'}>{customer.name}</p>
                                     </div>
                                     <div className={'wrapMessageBoxContainerBtn'}>
-                                        <Button variant={'primary'} className={'messageButtonEdit'} onClick={() => editCustomer(customer)} >Edit</Button>
+                                        <Button variant={'primary'} className={'messageButtonEdit'} onClick={() => newEditCustomer(customer)} >Edit</Button>
                                         <Button variant={'danger'} className={'messageButton'} onClick={() => removeCustomer(customer)} >Delete</Button>
                                     </div>
                                 </div>
