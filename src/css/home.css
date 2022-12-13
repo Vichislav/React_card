@@ -238,11 +238,16 @@
     padding: 2%;
 }
 
+.wrapEditBoxBlock {
+    display: none;
+}
+
 .wrapEditBox {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 10px;
+
 }
 .messageEditInput {
     width: 60%;
