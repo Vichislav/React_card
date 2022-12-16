@@ -20,9 +20,10 @@ const Message = () => {
     const [messageInput, setMessageInput] = useState('');
     /**состояние input для редактирования сообщения**/
     const [editInput, setEditInput] = useState('');
-    /**состояние чтобы отслеживать Id**/
-    const [currentId, setCurrentId] = useState('');
-
+    /**состояние чтобы отслеживать Id (промежуточное состояние id редактируемого)**/
+    const [transientId, setTransientId] = useState('');
+    /**состояние чтобы отслеживать Name (промежуточное состояние Name редактируемого)**/
+    const [transientName, setTransientName] = useState('');
 
     const handleMessageInput = (event) => {
         setMessageInput(event.target.value)
@@ -36,7 +37,7 @@ const Message = () => {
         document.getElementById('messageInput').value = ''  /*обнуляем отображение в инпуте на странице*/
     }
 
-    const addCustomer = (name) => {
+    const addMessage = (name) => {
         const customer = {
             name,
             id: Date.now() + 1, //
@@ -45,24 +46,36 @@ const Message = () => {
         clearInputCash()
     }
 
-    const removeCustomer = (customer) => {
+    const removeMessage = (customer) => {
         dispatch(removeCustomerAction(customer.id))
     }
 
-    const editCustomer = () => {
+    const editMessage = () => {
         const currentName =  document.getElementById('messageEditInput').value;
         const currentCustomer = {
             name: currentName,
-            id: currentId
+            id: transientId
         }
         dispatch(editCustomerAction(currentCustomer))
         document.getElementById('editBox').classList.remove('wrapEditBox')
     }
 
-    const newEditCustomer = (customer) => {
-        document.getElementById('messageEditInput').value = customer.name;
-        setCurrentId(customer.id);
-        document.getElementById('editBox').classList.add('wrapEditBox')
+    const transferForEditMessage = (customer) => {
+        document.getElementById('messageEditInput').value = customer.name; //перекинули имя вверх в инпут для редактирования
+        setTransientId(customer.id); // закинули во времянку id
+        setTransientName(customer.name); // закинули во времянку name
+        document.getElementById('editBox').classList.add('wrapEditBox'); //сделали видимым меню редактирования
+    }
+
+    const cancelEditMessage = () => {
+        document.getElementById('messageEditInput').value = '';
+        document.getElementById('editBox').classList.remove('wrapEditBox')
+        /*  const currentCustomer = {
+            name: transientName,
+            id: transientId
+        }
+        dispatch(editCustomerAction(currentCustomer))
+        document.getElementById('editBox').classList.remove('wrapEditBox')*/
     }
 
     return (
@@ -78,7 +91,7 @@ const Message = () => {
                                 onChange={handleMessageInput}
                             />
                         </InputGroup>
-                        <Button  className={'messageButton'} variant="primary" onClick={() => addCustomer(messageInput)}>Add</Button>
+                        <Button  className={'messageButton'} variant="primary" onClick={() => addMessage(messageInput)}>Add</Button>
                     </div>
                     <div className=' wrapEditBoxBlock' id={"editBox"}>
                         <InputGroup className="messageEditInput">
@@ -89,8 +102,8 @@ const Message = () => {
                                 onChange={handleEditInput}
                             />
                         </InputGroup>
-                        <Button  className={'messageButton'} variant="primary" onClick={() => editCustomer()}>Ok</Button>
-                        <Button  className={'messageButton'} variant='danger' onClick={() => editCustomer()}>No</Button>
+                        <Button  className={'messageButton'} variant="primary" onClick={() => editMessage()}>Ok</Button>
+                        <Button  className={'messageButton'} variant='danger' onClick={() => cancelEditMessage()}>No</Button>
                     </div>
 
                     {customers.length > 0 ? // если длина массива > 0 то отрисовываем первый див если нет то div после :
@@ -101,8 +114,8 @@ const Message = () => {
                                         <p className={'wrapMessageBoxContainerText'}>{customer.name}</p>
                                     </div>
                                     <div className={'wrapMessageBoxContainerBtn'}>
-                                        <Button variant={'primary'} className={'messageButtonEdit'} onClick={() => newEditCustomer(customer)} >Edit</Button>
-                                        <Button variant={'danger'} className={'messageButton'} onClick={() => removeCustomer(customer)} >Delete</Button>
+                                        <Button variant={'primary'} className={'messageButtonEdit'} onClick={() => transferForEditMessage(customer)} >Edit</Button>
+                                        <Button variant={'danger'} className={'messageButton'} onClick={() => removeMessage(customer)} >Delete</Button>
                                     </div>
                                 </div>
                             )}
