@@ -22,8 +22,6 @@ const Message = () => {
     const [editInput, setEditInput] = useState('');
     /**состояние чтобы отслеживать Id (промежуточное состояние id редактируемого)**/
     const [transientId, setTransientId] = useState('');
-    /**состояние чтобы отслеживать Name (промежуточное состояние Name редактируемого)**/
-    const [transientName, setTransientName] = useState('');
 
     const handleMessageInput = (event) => {
         setMessageInput(event.target.value)
@@ -63,19 +61,12 @@ const Message = () => {
     const transferForEditMessage = (customer) => {
         document.getElementById('messageEditInput').value = customer.name; //перекинули имя вверх в инпут для редактирования
         setTransientId(customer.id); // закинули во времянку id
-        setTransientName(customer.name); // закинули во времянку name
         document.getElementById('editBox').classList.add('wrapEditBox'); //сделали видимым меню редактирования
     }
 
     const cancelEditMessage = () => {
         document.getElementById('messageEditInput').value = '';
         document.getElementById('editBox').classList.remove('wrapEditBox')
-        /*  const currentCustomer = {
-            name: transientName,
-            id: transientId
-        }
-        dispatch(editCustomerAction(currentCustomer))
-        document.getElementById('editBox').classList.remove('wrapEditBox')*/
     }
 
     return (
@@ -103,7 +94,7 @@ const Message = () => {
                             />
                         </InputGroup>
                         <Button  className={'messageButton'} variant="primary" onClick={() => editMessage()}>Ok</Button>
-                        <Button  className={'messageButton'} variant='danger' onClick={() => cancelEditMessage()}>No</Button>
+                        <Button  className={'messageButton'} variant='danger' onClick={() => cancelEditMessage()}>Cancel</Button>
                     </div>
 
                     {customers.length > 0 ? // если длина массива > 0 то отрисовываем первый див если нет то div после :
