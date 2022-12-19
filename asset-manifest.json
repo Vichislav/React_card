@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React_card/static/css/main.73928f63.css",
-    "main.js": "/React_card/static/js/main.b23f24b3.js",
+    "main.css": "/React_card/static/css/main.935c2f47.css",
+    "main.js": "/React_card/static/js/main.5ca506a3.js",
     "static/js/787.28cb0dcd.chunk.js": "/React_card/static/js/787.28cb0dcd.chunk.js",
     "static/media/photo3.jpg": "/React_card/static/media/photo3.12b4d51383e94c2f9b7f.jpg",
     "static/media/photo2.jpg": "/React_card/static/media/photo2.2ad0f1df6d1d57098c7a.jpg",
@@ -16,12 +16,12 @@
     "static/media/cash_1.jpg": "/React_card/static/media/cash_1.53d304ed03a639e946d3.jpg",
     "static/media/about2.jpg": "/React_card/static/media/about2.62fc7c3a19f93c88338f.jpg",
     "index.html": "/React_card/index.html",
-    "main.73928f63.css.map": "/React_card/static/css/main.73928f63.css.map",
-    "main.b23f24b3.js.map": "/React_card/static/js/main.b23f24b3.js.map",
+    "main.935c2f47.css.map": "/React_card/static/css/main.935c2f47.css.map",
+    "main.5ca506a3.js.map": "/React_card/static/js/main.5ca506a3.js.map",
     "787.28cb0dcd.chunk.js.map": "/React_card/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.73928f63.css",
-    "static/js/main.b23f24b3.js"
+    "static/css/main.935c2f47.css",
+    "static/js/main.5ca506a3.js"
   ]
 }
