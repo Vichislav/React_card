@@ -84,17 +84,24 @@ const Message = () => {
                         </InputGroup>
                         <Button  className={'messageButton'} variant="primary" onClick={() => addMessage(messageInput)}>Add</Button>
                     </div>
-                    <div className=' wrapEditBoxBlock' id={"editBox"}>
-                        <InputGroup className="messageEditInput">
-                            <Form.Control
-                                aria-label="Amount (to the nearest dollar)"
-                                placeholder=""
-                                id="messageEditInput"
-                                onChange={handleEditInput}
-                            />
-                        </InputGroup>
-                        <Button  className={'messageButton'} variant="primary" onClick={() => editMessage()}>Ok</Button>
-                        <Button  className={'messageButton'} variant='danger' onClick={() => cancelEditMessage()}>Cancel</Button>
+                    <div className='wrapEditBoxBlock' id={"editBox"}>
+                        <div className={'wrapEditBoxContainer'}>
+                            <p className={'wrapEditBoxContainerText'} >Edit Menu</p>
+                            <div className={'wrapEditBoxContainerSecond'}>
+                                <InputGroup className="messageEditInput">
+                                    <Form.Control
+                                        aria-label="Amount (to the nearest dollar)"
+                                        placeholder=""
+                                        id="messageEditInput"
+                                        onChange={handleEditInput}
+                                    />
+                                </InputGroup>
+                                <div className={'wrapMessageBoxContainerBtn'}>
+                                    <Button  className={'messageButtonOk'} variant="primary" onClick={() => editMessage()}>Ok</Button>
+                                    <Button  className={'messageButtonOk'} variant='danger' onClick={() => cancelEditMessage()}>No</Button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {customers.length > 0 ? // если длина массива > 0 то отрисовываем первый див если нет то div после :
@@ -105,8 +112,8 @@ const Message = () => {
                                         <p className={'wrapMessageBoxContainerText'}>{customer.name}</p>
                                     </div>
                                     <div className={'wrapMessageBoxContainerBtn'}>
-                                        <Button variant={'primary'} className={'messageButtonEdit'} onClick={() => transferForEditMessage(customer)} >Edit</Button>
-                                        <Button variant={'danger'} className={'messageButton'} onClick={() => removeMessage(customer)} >Delete</Button>
+                                        <Button variant={'primary'} className={'messageButtonOk'} onClick={() => transferForEditMessage(customer)} >Edit</Button>
+                                        <Button variant={'danger'} className={'messageButtonOk'} onClick={() => removeMessage(customer)} >Del</Button>
                                     </div>
                                 </div>
                             )}
