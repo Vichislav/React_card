@@ -9,6 +9,7 @@ import '../css/home.css'
 import MoneyCard from "../Components/MoneyCard";
 import Message from "../Components/Message";
 import ContactsComponents from "../Components/ContactsComponents";
+import Footer from "../Components/Footer";
 
 
 
@@ -110,6 +111,7 @@ class Home extends Component {
                         </Card>
                     </div>
                 </div>
+                <Footer></Footer>
             </div>
         );
     }

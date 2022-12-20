@@ -485,3 +485,50 @@
     }
 }
 
+/*************** FOOTER ********************/
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    background-color: wheat;
+    padding: 15px 0 15px 0;
+}
+.footerLeft { /*котейнер картинки слева*/
+
+}
+.footerLeftHand { /*картинка слева*/
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    transform: rotate(-100grad);
+    /*animation-name: LeftHandAnimation;
+    animation-duration: 1s;*/
+    animation: LeftHandAnimation 1s infinite ease-in-out;
+}
+
+@keyframes LeftHandAnimation {
+    0% {
+        transform: rotate(-100grad);
+    }
+    50% {
+        transform: rotate(-120grad);
+    }
+    100% {
+        transform: rotate(-100grad);
+    }
+}
+
+.footerMiddle {
+    padding: 0 15px 0 15px;
+}
+
+.footerRight {
+
+}
+.footerRightHand {
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    transform: rotate(-100grad);
+}
