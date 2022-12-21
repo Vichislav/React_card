@@ -36,12 +36,19 @@ const Message = () => {
     }
 
     const addMessage = (name) => {
-        const customer = {
-            name,
-            id: Date.now() + 1, //
+        if (name === ""){
+            console.log('if тут')
+           document.getElementById('messageInput').placeholder = "the message is empty"
+
+        }else {
+            const customer = {
+                name,
+                id: Date.now() + 1, //
+            }
+            dispatch(addCustomerAction(customer))
+            clearInputCash()
+            document.getElementById('messageInput').placeholder = "enter yor message"
         }
-        dispatch(addCustomerAction(customer))
-        clearInputCash()
     }
 
     const removeMessage = (customer) => {

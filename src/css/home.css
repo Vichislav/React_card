@@ -61,12 +61,21 @@
     position: absolute;
     width: 150px;
     height: 150px;
-    left: 415px;
+    left: 28%;
     top: 150px;
     background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
     opacity: 0.9;
     filter: blur(55px);
     transform: rotate(5.78deg);
+}
+
+@media only screen and (max-width: 2000px) {
+    .wrapContainerContentGradient {
+        width: 150px;
+        height: 150px;
+        left: 415px;
+        top: 150px;
+    }
 }
 @media only screen and (max-width: 1100px) {
     .wrapContainerContentGradient {
