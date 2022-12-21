@@ -501,28 +501,28 @@
     height: 80px;
     width: 80px;
     border-radius: 30px;
-    transform: rotate(-100grad);
-    /*animation-name: LeftHandAnimation;
-    animation-duration: 1s;*/
+    transform: rotate(0grad);
     animation: LeftHandAnimation 1s infinite ease-in-out;
 }
 
 @keyframes LeftHandAnimation {
     0% {
-        transform: rotate(-100grad);
+        transform: rotate(0grad);
     }
     50% {
-        transform: rotate(-120grad);
+        transform: rotate(20grad);
     }
     100% {
-        transform: rotate(-100grad);
+        transform: rotate(0grad);
     }
 }
 
 .footerMiddle {
     padding: 0 15px 0 15px;
 }
-
+.footerMiddleText {
+    font-size: 15px;
+}
 .footerRight {
 
 }
@@ -530,5 +530,33 @@
     height: 80px;
     width: 80px;
     border-radius: 30px;
-    transform: rotate(-100grad);
+    transform: rotate(0grad);
+    animation: RightHandAnimation 1s infinite ease-in-out;
+}
+@keyframes RightHandAnimation {
+    0% {
+        transform: rotate(0grad);
+    }
+    50% {
+        transform: rotate(-20grad);
+    }
+    100% {
+        transform: rotate(0grad);
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .footerMiddleText {
+        font-size: 12px;
+    }
+    .footerLeftHand { /*картинка слева*/
+        height: 60px;
+        width: 60px;
+        border-radius: 25px;
+    }
+    .footerRightHand {
+        height: 60px;
+        width: 60px;
+        border-radius: 25px;
+    }
 }
