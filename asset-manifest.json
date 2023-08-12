@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/React_card/static/css/main.17a24af6.css",
-    "main.js": "/React_card/static/js/main.8066b11d.js",
+    "main.js": "/React_card/static/js/main.b36c45b6.js",
     "static/js/787.28cb0dcd.chunk.js": "/React_card/static/js/787.28cb0dcd.chunk.js",
     "static/media/photo3.jpg": "/React_card/static/media/photo3.12b4d51383e94c2f9b7f.jpg",
     "static/media/photo2.jpg": "/React_card/static/media/photo2.2ad0f1df6d1d57098c7a.jpg",
     "static/media/photo1.jpg": "/React_card/static/media/photo1.6fbf508f726ed6b0361f.jpg",
+    "static/media/card_0.png": "/React_card/static/media/card_0.8014886003657554b830.png",
     "static/media/Card_2.jpg": "/React_card/static/media/Card_2.556b698616282f028a65.jpg",
     "static/media/Card_1.jpg": "/React_card/static/media/Card_1.d937b07ef31311cbac56.jpg",
     "static/media/Card_4.jpg": "/React_card/static/media/Card_4.8cbd3d8b9701ad8e21e7.jpg",
@@ -15,15 +16,16 @@
     "static/media/hand_left.png": "/React_card/static/media/hand_left.5d12328f7ada2c176310.png",
     "static/media/hand_right.png": "/React_card/static/media/hand_right.c7349567c26286dc15db.png",
     "static/media/Card_3.jpg": "/React_card/static/media/Card_3.74ecce29243812e8fd8b.jpg",
+    "static/media/git.jpg": "/React_card/static/media/git.74205cbef65a6e843b4e.jpg",
     "static/media/cash_1.jpg": "/React_card/static/media/cash_1.53d304ed03a639e946d3.jpg",
     "static/media/about2.jpg": "/React_card/static/media/about2.62fc7c3a19f93c88338f.jpg",
     "index.html": "/React_card/index.html",
     "main.17a24af6.css.map": "/React_card/static/css/main.17a24af6.css.map",
-    "main.8066b11d.js.map": "/React_card/static/js/main.8066b11d.js.map",
+    "main.b36c45b6.js.map": "/React_card/static/js/main.b36c45b6.js.map",
     "787.28cb0dcd.chunk.js.map": "/React_card/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17a24af6.css",
-    "static/js/main.8066b11d.js"
+    "static/js/main.b36c45b6.js"
   ]
 }
