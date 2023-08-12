@@ -5,6 +5,8 @@ import card_1 from "../Assets/Card_1.jpg"
 import card_2 from "../Assets/Card_2.jpg"
 import card_3 from "../Assets/Card_3.jpg"
 import card_4 from "../Assets/Card_4.jpg"
+import card_0 from "../Assets/card_0.png"
+import git_card from "../Assets/git.jpg"
 import '../css/home.css'
 import MoneyCard from "../Components/MoneyCard";
 import Message from "../Components/Message";
@@ -44,16 +46,17 @@ class Home extends Component {
                     <div className={'wrapStudyRow'}>
                         <Card  className="wrapStudyRowItemLeft">
                             <Card.Img variant="top"
-                                      src={card_1}
+                                      src={card_0}
                                       className={'wrapStudyRowItemImg'}
                             />
                             <Card.Body>
-                                <Card.Title style={{color: "white"}}>Unit test (Angular app)</Card.Title>
+                                <Card.Title style={{color: "white"}}>React приложение</Card.Title>
                                 <Card.Text style={{color: "white"}}>
-                                    Тестирование Angular приложения с применением Karma и Jasmine
+                                    В приложении реализована возможность авторизации(и выхода) и регистрации пользователя,
+                                    заполнения и редактирования данных пользователя.
                                 </Card.Text>
                                 <Button variant="primary"
-                                        onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
+                                        onClick={() => window.open("https://github.com/Vichislav/frontend_purrweb")}
                                 >Подробнее  на git
                                 </Button>
                             </Card.Body>
@@ -106,6 +109,40 @@ class Home extends Component {
                                 <Button variant="primary"
                                         onClick={() => window.open("https://github.com/Vichislav/Angular_Todo_app")}
                                 >Подробнее  на git
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div className={'wrapStudyRow'}>
+                        <Card  className="wrapStudyRowItemLeft">
+                            <Card.Img variant="top"
+                                      src={card_1}
+                                      className={'wrapStudyRowItemImg'}
+                            />
+                            <Card.Body>
+                                <Card.Title style={{color: "white"}}>Unit test (Angular app)</Card.Title>
+                                <Card.Text style={{color: "white"}}>
+                                    Тестирование Angular приложения с применением Karma и Jasmine
+                                </Card.Text>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav/ang_unit_test")}
+                                >Подробнее  на git
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                        <Card  className="wrapStudyRowItemRight">
+                            <Card.Img variant="top"
+                                      src={git_card}
+                                      className={'wrapStudyRowItemImg'}
+                            />
+                            <Card.Body>
+                                <Card.Title>Больше информации</Card.Title>
+                                <Card.Text>
+                                    Больше информации можно найти по ссылке на git.
+                                </Card.Text>
+                                <Button variant="primary"
+                                        onClick={() => window.open("https://github.com/Vichislav")}
+                                >Подробнее на git
                                 </Button>
                             </Card.Body>
                         </Card>
